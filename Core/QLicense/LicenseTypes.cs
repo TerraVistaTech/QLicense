@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace QLicense
+namespace Licensing
 {
     public enum LicenseTypes
     {

@@ -2,8 +2,8 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Reflection;
-using QLicense;
 using DemoLicense;
+using Licensing;
 
 namespace DemoWinFormApp
 {

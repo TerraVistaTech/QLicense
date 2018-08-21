@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QLicense.Windows.Controls
+namespace Licensing.GUI
 {
     public class LicenseSettingsValidatingEventArgs:EventArgs
     {

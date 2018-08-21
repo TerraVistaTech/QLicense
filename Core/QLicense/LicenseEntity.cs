@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Xml.Serialization;
 
-namespace QLicense
+namespace Licensing
 {
     /// <summary>
     /// This attribute defines whether the property of LicenseEntity object will be shown in LicenseInfoControl

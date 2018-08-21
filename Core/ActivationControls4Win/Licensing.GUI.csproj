@@ -7,8 +7,8 @@
     <ProjectGuid>{DDF06EAC-02DF-4BDA-A883-98B856BC1765}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QLicense.Windows.Controls</RootNamespace>
-    <AssemblyName>QLicense.Windows.Controls</AssemblyName>
+    <RootNamespace>Licensing.GUI</RootNamespace>
+    <AssemblyName>Licensing.GUI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -104,9 +104,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QLicense\QLicense.csproj">
+    <ProjectReference Include="..\QLicense\Licensing.csproj">
       <Project>{1980e43f-c5e4-4a2b-95a6-1aebdc7ee2b7}</Project>
-      <Name>QLicense</Name>
+      <Name>Licensing</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

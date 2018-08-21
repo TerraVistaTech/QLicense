@@ -1,4 +1,6 @@
-﻿namespace DemoActivationTool
+﻿using Licensing.GUI;
+
+namespace DemoActivationTool
 {
     partial class frmMain
     {
@@ -30,8 +32,8 @@
         {
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.grpbxLicSettings = new System.Windows.Forms.GroupBox();
-            this.licSettings = new QLicense.Windows.Controls.LicenseSettingsControl();
-            this.licString = new QLicense.Windows.Controls.LicenseStringContainer();
+            this.licSettings = new LicenseSettingsControl();
+            this.licString = new LicenseStringContainer();
             this.grpbxLicSettings.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             this.licSettings.Name = "licSettings";
             this.licSettings.Size = new System.Drawing.Size(328, 427);
             this.licSettings.TabIndex = 7;
-            this.licSettings.OnLicenseGenerated += new QLicense.Windows.Controls.LicenseGeneratedHandler(this.licSettings_OnLicenseGenerated);
+            this.licSettings.OnLicenseGenerated += new LicenseGeneratedHandler(this.licSettings_OnLicenseGenerated);
             // 
             // licString
             // 
@@ -88,9 +90,9 @@
 
         #endregion
         private System.Windows.Forms.SaveFileDialog dlgSaveFile;
-        private QLicense.Windows.Controls.LicenseStringContainer licString;
+        private LicenseStringContainer licString;
         private System.Windows.Forms.GroupBox grpbxLicSettings;
-        private QLicense.Windows.Controls.LicenseSettingsControl licSettings;
+        private LicenseSettingsControl licSettings;
     }
 }
 

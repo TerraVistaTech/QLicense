@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLicense", "Core\QLicense\QLicense.csproj", "{1980E43F-C5E4-4A2B-95A6-1AEBDC7EE2B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licensing", "Core\QLicense\Licensing.csproj", "{1980E43F-C5E4-4A2B-95A6-1AEBDC7EE2B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivationControls4Win", "Core\ActivationControls4Win\ActivationControls4Win.csproj", "{DDF06EAC-02DF-4BDA-A883-98B856BC1765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licensing.GUI", "Core\ActivationControls4Win\Licensing.GUI.csproj", "{DDF06EAC-02DF-4BDA-A883-98B856BC1765}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWinFormApp", "Demo\DemoWinFormApp\DemoWinFormApp.csproj", "{01F6D760-D0D5-45CB-B730-AFBAF298C7D1}"
 EndProject
@@ -53,5 +53,8 @@ Global
 		{01F6D760-D0D5-45CB-B730-AFBAF298C7D1} = {9461EE4C-58DE-49DC-B363-46C0705BEF74}
 		{7E6FF8AE-63E9-4BB2-9ACE-7580CE229F65} = {9461EE4C-58DE-49DC-B363-46C0705BEF74}
 		{9F0BD6DF-F288-451B-828E-6431E5441DB8} = {9461EE4C-58DE-49DC-B363-46C0705BEF74}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B6F31E6-A209-427D-B639-64F9B4A13197}
 	EndGlobalSection
 EndGlobal

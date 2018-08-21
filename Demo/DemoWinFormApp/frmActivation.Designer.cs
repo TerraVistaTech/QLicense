@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.licActCtrl = new QLicense.Windows.Controls.LicenseActivateControl();
+            this.licActCtrl = new Licensing.GUI.LicenseActivateControl();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
 
         #endregion
 
-        private QLicense.Windows.Controls.LicenseActivateControl licActCtrl;
+        private Licensing.GUI.LicenseActivateControl licActCtrl;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
     }

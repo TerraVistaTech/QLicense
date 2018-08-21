@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="QLicense.Windows.Controls">
-      <HintPath>..\..\Core\ActivationControls4Win\obj\Debug\QLicense.Windows.Controls.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -92,9 +89,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\QLicense\QLicense.csproj">
+    <ProjectReference Include="..\..\Core\ActivationControls4Win\Licensing.GUI.csproj">
+      <Project>{ddf06eac-02df-4bda-a883-98b856bc1765}</Project>
+      <Name>Licensing.GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\QLicense\Licensing.csproj">
       <Project>{1980e43f-c5e4-4a2b-95a6-1aebdc7ee2b7}</Project>
-      <Name>QLicense</Name>
+      <Name>Licensing</Name>
     </ProjectReference>
     <ProjectReference Include="..\DemoLicense\DemoLicense.csproj">
       <Project>{9f0bd6df-f288-451b-828e-6431e5441db8}</Project>

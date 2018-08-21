@@ -1,8 +1,8 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows.Forms;
-using System.IO;
 
-namespace QLicense.Windows.Controls
+namespace Licensing.GUI
 {
     public partial class LicenseStringContainer : UserControl
     {

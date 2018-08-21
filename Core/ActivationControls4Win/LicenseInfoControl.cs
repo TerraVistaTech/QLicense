@@ -1,10 +1,10 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using System.Reflection;
-using System.ComponentModel;
 
-namespace QLicense.Windows.Controls
+namespace Licensing.GUI
 {
     public partial class LicenseInfoControl : UserControl
     {

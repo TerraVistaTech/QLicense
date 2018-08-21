@@ -3,8 +3,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security;
 using System.Reflection;
-using QLicense;
 using DemoLicense;
+using Licensing;
+using Licensing.GUI;
 
 namespace DemoActivationTool
 {
@@ -42,7 +43,7 @@ namespace DemoActivationTool
             licSettings.License = new MyLicense(); 
         }
 
-        private void licSettings_OnLicenseGenerated(object sender, QLicense.Windows.Controls.LicenseGeneratedEventArgs e)
+        private void licSettings_OnLicenseGenerated(object sender, LicenseGeneratedEventArgs e)
         {
             //Event raised when license string is generated. Just show it in the text box
             licString.LicenseString = e.LicenseBASE64String;

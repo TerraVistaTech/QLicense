@@ -1,10 +1,10 @@
-﻿using QLicense;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Xml.Serialization;
+using Licensing;
 
 namespace DemoLicense
 {
-    public class MyLicense : QLicense.LicenseEntity
+    public class MyLicense : LicenseEntity
     {
         [DisplayName("Enable Feature 01")]
         [Category("License Options")]        

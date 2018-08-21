@@ -2,7 +2,7 @@
 using System.Security;
 using System.Windows.Forms;
 
-namespace QLicense.Windows.Controls
+namespace Licensing.GUI
 {
     public delegate void LicenseSettingsValidatingHandler(object sender, LicenseSettingsValidatingEventArgs e);
     public delegate void LicenseGeneratedHandler(object sender, LicenseGeneratedEventArgs e);

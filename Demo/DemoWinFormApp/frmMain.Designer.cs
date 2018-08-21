@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.licInfo = new QLicense.Windows.Controls.LicenseInfoControl();
+            this.licInfo = new Licensing.GUI.LicenseInfoControl();
             this.SuspendLayout();
             // 
             // licInfo
@@ -55,7 +55,7 @@
 
         #endregion
 
-        private QLicense.Windows.Controls.LicenseInfoControl licInfo;
+        private Licensing.GUI.LicenseInfoControl licInfo;
     }
 }
 

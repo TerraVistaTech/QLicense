@@ -7,8 +7,8 @@
     <ProjectGuid>{1980E43F-C5E4-4A2B-95A6-1AEBDC7EE2B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QLicense</RootNamespace>
-    <AssemblyName>QLicense</AssemblyName>
+    <RootNamespace>Licensing</RootNamespace>
+    <AssemblyName>Licensing</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

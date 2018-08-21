@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace QLicense.Windows.Controls
+namespace Licensing.GUI
 {
     public partial class LicenseActivateControl : UserControl
     {

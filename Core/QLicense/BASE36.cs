@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace QLicense
+namespace Licensing
 {
     class BASE36
     {
