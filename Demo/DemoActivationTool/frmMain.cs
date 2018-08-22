@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.IO;
 using System.Security;
-using System.Reflection;
 using DemoActivationTool.Properties;
 using DemoLicense;
 using Licensing;
