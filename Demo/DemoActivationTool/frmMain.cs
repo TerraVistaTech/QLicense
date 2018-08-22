@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security;
 using System.Reflection;
+using DemoActivationTool.Properties;
 using DemoLicense;
 using Licensing;
 using Licensing.GUI;
@@ -11,7 +12,7 @@ namespace DemoActivationTool
 {
     public partial class frmMain : Form
     {
-        private byte[] _certPubicKeyData;
+        private byte[] _certPrivateKeyData;
         private SecureString _certPwd = new SecureString();
 
         public frmMain()
@@ -26,17 +27,11 @@ namespace DemoActivationTool
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //Read public key from assembly
-            Assembly _assembly = Assembly.GetExecutingAssembly();
-            using (MemoryStream _mem = new MemoryStream())
-            {
-                _assembly.GetManifestResourceStream("DemoActivationTool.LicenseSign.pfx").CopyTo(_mem);
-
-                _certPubicKeyData = _mem.ToArray();
-            }
+            //Read private key from assembly
+            _certPrivateKeyData = Resources.Licensing;
 
             //Initialize the path for the certificate to sign the XML license file
-            licSettings.CertificatePrivateKeyData = _certPubicKeyData;
+            licSettings.CertificatePrivateKeyData = _certPrivateKeyData;
             licSettings.CertificatePassword = _certPwd;
 
             //Initialize a new license object
@@ -56,7 +51,7 @@ namespace DemoActivationTool
             //Call the core library to generate the license
             licString.LicenseString = LicenseHandler.GenerateLicenseBASE64String(
                 new MyLicense(),
-                _certPubicKeyData,
+                _certPrivateKeyData,
                 _certPwd);
         }
 

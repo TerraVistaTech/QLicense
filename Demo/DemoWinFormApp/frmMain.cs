@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Reflection;
 using DemoLicense;
+using DemoWinFormApp.Properties;
 using Licensing;
 
 namespace DemoWinFormApp
@@ -24,14 +25,8 @@ namespace DemoWinFormApp
             string _msg = string.Empty;
             LicenseStatus _status = LicenseStatus.UNDEFINED;
 
-            //Read public key from assembly
-            Assembly _assembly = Assembly.GetExecutingAssembly();
-            using (MemoryStream _mem = new MemoryStream())
-            {
-                _assembly.GetManifestResourceStream("DemoWinFormApp.LicenseVerify.cer").CopyTo(_mem);
-
-                _certPubicKeyData = _mem.ToArray();
-            }
+            //Read public key from resources
+            _certPubicKeyData = Resources.Licensing;
 
             //Check if the XML license file exists
             if (File.Exists("license.lic"))
