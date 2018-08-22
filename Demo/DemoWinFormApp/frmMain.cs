@@ -22,8 +22,8 @@ namespace DemoWinFormApp
         {
             //Initialize variables with default values
             MyLicense _lic = null;
-            string _msg = string.Empty;
-            LicenseStatus _status = LicenseStatus.UNDEFINED;
+            var _msg = string.Empty;
+            var _status = LicenseStatus.UNDEFINED;
 
             //Read public key from resources
             _certPubicKeyData = Resources.Licensing;
@@ -62,7 +62,7 @@ namespace DemoWinFormApp
                     //and also popup the activation form for user to activate your application
                     MessageBox.Show(_msg, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    using (frmActivation frm = new frmActivation())
+                    using (var frm = new frmActivation())
                     {
                         frm.CertificatePublicKeyData = _certPubicKeyData;
                         frm.ShowDialog();

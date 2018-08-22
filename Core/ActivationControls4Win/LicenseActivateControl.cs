@@ -42,9 +42,9 @@ namespace Licensing.GUI
             }
 
             //Check the activation string
-            LicenseStatus _licStatus= LicenseStatus.UNDEFINED;
-            string _msg = string.Empty;
-            LicenseEntity _lic = LicenseHandler.ParseLicenseFromBASE64String(LicenseObjectType, txtLicense.Text.Trim(), CertificatePublicKeyData, out _licStatus, out _msg);
+            var _licStatus= LicenseStatus.UNDEFINED;
+            var _msg = string.Empty;
+            var _lic = LicenseHandler.ParseLicenseFromBASE64String(LicenseObjectType, txtLicense.Text.Trim(), CertificatePublicKeyData, out _licStatus, out _msg);
             switch (_licStatus)
             {
                 case LicenseStatus.VALID:                   

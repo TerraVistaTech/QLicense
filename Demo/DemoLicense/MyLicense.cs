@@ -33,7 +33,7 @@ namespace DemoLicense
 
         public override LicenseStatus DoExtraValidation(out string validationMsg)
         {
-            LicenseStatus _licStatus = LicenseStatus.UNDEFINED;
+            var _licStatus = LicenseStatus.UNDEFINED;
             validationMsg = string.Empty;
 
             switch (this.Type)

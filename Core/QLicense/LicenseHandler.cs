@@ -28,10 +28,10 @@ namespace Licensing
         public static string GenerateLicenseBASE64String(LicenseEntity lic, byte[] certPrivateKeyData, SecureString certFilePwd)
         {
             //Serialize license object into XML                    
-            XmlDocument _licenseObject = new XmlDocument();
-            using (StringWriter _writer = new StringWriter())
+            var _licenseObject = new XmlDocument();
+            using (var _writer = new StringWriter())
             {
-                XmlSerializer _serializer = new XmlSerializer(typeof(LicenseEntity), new Type[] { lic.GetType() });
+                var _serializer = new XmlSerializer(typeof(LicenseEntity), new Type[] { lic.GetType() });
 
                 _serializer.Serialize(_writer, lic);
 
@@ -39,9 +39,9 @@ namespace Licensing
             }
 
             //Get RSA key from certificate
-            X509Certificate2 cert = new X509Certificate2(certPrivateKeyData, certFilePwd);
+            var cert = new X509Certificate2(certPrivateKeyData, certFilePwd);
 
-            RSACryptoServiceProvider rsaKey = (RSACryptoServiceProvider)cert.PrivateKey;
+            var rsaKey = (RSACryptoServiceProvider)cert.PrivateKey;
 
             //Sign the XML
             SignXML(_licenseObject, rsaKey);
@@ -63,16 +63,16 @@ namespace Licensing
                 return null;
             }
 
-            string _licXML = string.Empty;
+            var _licXML = string.Empty;
             LicenseEntity _lic = null;
 
             try
             {
                 //Get RSA key from certificate
-                X509Certificate2 cert = new X509Certificate2(certPubKeyData);
-                RSACryptoServiceProvider rsaKey = (RSACryptoServiceProvider)cert.PublicKey.Key;
+                var cert = new X509Certificate2(certPubKeyData);
+                var rsaKey = (RSACryptoServiceProvider)cert.PublicKey.Key;
 
-                XmlDocument xmlDoc = new XmlDocument();
+                var xmlDoc = new XmlDocument();
 
                 // Load an XML file into the XmlDocument object.
                 xmlDoc.PreserveWhitespace = true;
@@ -81,14 +81,14 @@ namespace Licensing
                 // Verify the signature of the signed XML.            
                 if (VerifyXml(xmlDoc, rsaKey))
                 {
-                    XmlNodeList nodeList = xmlDoc.GetElementsByTagName("Signature");
+                    var nodeList = xmlDoc.GetElementsByTagName("Signature");
                     xmlDoc.DocumentElement.RemoveChild(nodeList[0]);
 
                     _licXML = xmlDoc.OuterXml;
 
                     //Deserialize license
-                    XmlSerializer _serializer = new XmlSerializer(typeof(LicenseEntity), new Type[] { licenseObjType });
-                    using (StringReader _reader = new StringReader(_licXML))
+                    var _serializer = new XmlSerializer(typeof(LicenseEntity), new Type[] { licenseObjType });
+                    using (var _reader = new StringReader(_licXML))
                     {
                         _lic = (LicenseEntity)_serializer.Deserialize(_reader);
                     }
@@ -120,17 +120,17 @@ namespace Licensing
                 throw new ArgumentException("Key");
 
             // Create a SignedXml object.
-            SignedXml signedXml = new SignedXml(xmlDoc);
+            var signedXml = new SignedXml(xmlDoc);
 
             // Add the key to the SignedXml document.
             signedXml.SigningKey = Key;
 
             // Create a reference to be signed.
-            Reference reference = new Reference();
+            var reference = new Reference();
             reference.Uri = "";
 
             // Add an enveloped transformation to the reference.
-            XmlDsigEnvelopedSignatureTransform env = new XmlDsigEnvelopedSignatureTransform();
+            var env = new XmlDsigEnvelopedSignatureTransform();
             reference.AddTransform(env);
 
             // Add the reference to the SignedXml object.
@@ -141,7 +141,7 @@ namespace Licensing
 
             // Get the XML representation of the signature and save
             // it to an XmlElement object.
-            XmlElement xmlDigitalSignature = signedXml.GetXml();
+            var xmlDigitalSignature = signedXml.GetXml();
 
             // Append the element to the XML document.
             xmlDoc.DocumentElement.AppendChild(xmlDoc.ImportNode(xmlDigitalSignature, true));
@@ -160,11 +160,11 @@ namespace Licensing
 
             // Create a new SignedXml object and pass it
             // the XML document class.
-            SignedXml signedXml = new SignedXml(Doc);
+            var signedXml = new SignedXml(Doc);
 
             // Find the "Signature" node and create a new
             // XmlNodeList object.
-            XmlNodeList nodeList = Doc.GetElementsByTagName("Signature");
+            var nodeList = Doc.GetElementsByTagName("Signature");
 
             // Throw an exception if no signature was found.
             if (nodeList.Count <= 0)

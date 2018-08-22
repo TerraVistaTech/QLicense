@@ -85,7 +85,7 @@ namespace Licensing.GUI
 
             if (OnLicenseSettingsValidating != null)
             {
-                LicenseSettingsValidatingEventArgs _args = new LicenseSettingsValidatingEventArgs() { License = _lic, CancelGenerating = false };
+                var _args = new LicenseSettingsValidatingEventArgs() { License = _lic, CancelGenerating = false };
 
                 OnLicenseSettingsValidating(this, _args);
 
@@ -97,7 +97,7 @@ namespace Licensing.GUI
 
             if (OnLicenseGenerated != null)
             {
-                string _licStr = LicenseHandler.GenerateLicenseBASE64String(_lic, CertificatePrivateKeyData, CertificatePassword);
+                var _licStr = LicenseHandler.GenerateLicenseBASE64String(_lic, CertificatePrivateKeyData, CertificatePassword);
 
                 OnLicenseGenerated(this, new LicenseGeneratedEventArgs() { LicenseBASE64String = _licStr });
             }

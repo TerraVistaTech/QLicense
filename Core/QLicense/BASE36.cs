@@ -12,10 +12,10 @@ namespace Licensing
         {
             long _result = 0;
             double _pow = 0;
-            for (int _i = input.Length - 1; _i >= 0; _i--)
+            for (var _i = input.Length - 1; _i >= 0; _i--)
             {
-                char _c = input[_i];
-                int pos = _charList.IndexOf(_c);
+                var _c = input[_i];
+                var pos = _charList.IndexOf(_c);
                 if (pos > -1)
                     _result += pos * (long)Math.Pow(_charList.Length, _pow);
                 else
@@ -27,7 +27,7 @@ namespace Licensing
 
         public static string Encode(ulong input)
         {
-            StringBuilder _sb = new StringBuilder();
+            var _sb = new StringBuilder();
             do
             {
                 _sb.Append(_charArray[input % (ulong)_charList.Length]);

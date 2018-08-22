@@ -32,18 +32,18 @@ namespace Licensing.GUI
         {
             try
             {
-                StringBuilder _sb = new StringBuilder(512);
+                var _sb = new StringBuilder(512);
 
-                Type _typeLic = license.GetType();
-                PropertyInfo[] _props = _typeLic.GetProperties();
+                var _typeLic = license.GetType();
+                var _props = _typeLic.GetProperties();
 
                 object _value = null;
-                string _formatedValue = string.Empty;
-                foreach (PropertyInfo _p in _props)
+                var _formatedValue = string.Empty;
+                foreach (var _p in _props)
                 {
                     try
                     {
-                        ShowInLicenseInfoAttribute _showAttr = (ShowInLicenseInfoAttribute)Attribute.GetCustomAttribute(_p, typeof(ShowInLicenseInfoAttribute));
+                        var _showAttr = (ShowInLicenseInfoAttribute)Attribute.GetCustomAttribute(_p, typeof(ShowInLicenseInfoAttribute));
                         if (_showAttr != null && _showAttr.ShowInLicenseInfo)
                         {
                             _value = _p.GetValue(license, null);
@@ -79,11 +79,11 @@ namespace Licensing.GUI
                                         }
                                         break;
                                     case ShowInLicenseInfoAttribute.FormatType.EnumDescription:
-                                        string _name = Enum.GetName(_p.PropertyType, _value);
+                                        var _name = Enum.GetName(_p.PropertyType, _value);
                                         if (_name != null)
                                         {
-                                            FieldInfo _fi = _p.PropertyType.GetField(_name);
-                                            DescriptionAttribute _dna = (DescriptionAttribute)Attribute.GetCustomAttribute(_fi, typeof(DescriptionAttribute));
+                                            var _fi = _p.PropertyType.GetField(_name);
+                                            var _dna = (DescriptionAttribute)Attribute.GetCustomAttribute(_fi, typeof(DescriptionAttribute));
                                             if (_dna != null)
                                                 _formatedValue = _dna.Description;
                                             else
