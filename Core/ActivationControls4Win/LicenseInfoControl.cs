@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -92,6 +94,18 @@ namespace Licensing.GUI
                                         {
                                             _formatedValue = _value.ToString();
                                         }
+                                        break;
+                                    case ShowInLicenseInfoAttribute.FormatType.List:
+                                        switch (_value)
+                                        {
+                                            case List<int> intList:
+                                                _formatedValue = string.Join(", ", intList);
+                                                break;
+                                            case List<string> strList:
+                                                _formatedValue = string.Join(", ", strList);
+                                                break;
+                                        } 
+                                        
                                         break;
                                 }
 

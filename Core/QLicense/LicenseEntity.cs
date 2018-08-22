@@ -16,6 +16,7 @@ namespace Licensing
             Date,
             DateTime,
             EnumDescription,
+            List
         }
 
         protected bool _showInLicenseInfo = true;

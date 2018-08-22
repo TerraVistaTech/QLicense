@@ -1,3 +1,7 @@
+﻿using System;
+using System.Drawing;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Xml.Serialization;
 using Licensing;
 
@@ -19,15 +23,27 @@ namespace DemoLicense
 
 
         [DisplayName("Enable Feature 03")]
-        [Category("License Options")]        
+        [Category("License Options")]
         [XmlElement("EnableFeature03")]
-        [ShowInLicenseInfo(true, "Enable Feature 03", ShowInLicenseInfoAttribute.FormatType.String)]
-        public bool EnableFeature03 { get; set; }
+        [ShowInLicenseInfo(true, "Enable Feature 03", ShowInLicenseInfoAttribute.FormatType.List)]
+        [Editor(@"System.Windows.Forms.Design.StringCollectionEditor," +
+                "System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+            typeof(System.Drawing.Design.UITypeEditor))]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        public List<string> EnableFeature03 { get; set; }
+
+        [DisplayName("Enable Feature 04")]
+        [Category("License Options")]
+        [XmlElement("EnableFeature04")]
+        [ShowInLicenseInfo(true, "Enable Feature 04", ShowInLicenseInfoAttribute.FormatType.List)]
+        public List<int> EnableFeature04 { get; set; }
 
         public MyLicense()
         {
             //Initialize app name for the license
             this.AppName = "DemoWinFormApp";
+            EnableFeature03 = new List<string>();
+            EnableFeature04 = new List<int>();
         }
 
         public override LicenseStatus DoExtraValidation(out string validationMsg)
