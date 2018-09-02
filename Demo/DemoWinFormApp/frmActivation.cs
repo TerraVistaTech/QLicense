@@ -40,7 +40,7 @@ namespace DemoWinFormApp
                 //If license if valid, save the license string into a local file
                 File.WriteAllText(Path.Combine(Application.StartupPath, "license.lic"), licActCtrl.LicenseBASE64String);
 
-                MessageBox.Show("License accepted, the application will be close. Please restart it later", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("License accepted, the application will be closed. Please restart it later", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
             }
