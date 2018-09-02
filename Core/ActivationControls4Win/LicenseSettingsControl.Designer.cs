@@ -37,6 +37,8 @@
             this.grpbxLicenseInfo = new System.Windows.Forms.GroupBox();
             this.pgLicenseSettings = new System.Windows.Forms.PropertyGrid();
             this.btnGenLicense = new System.Windows.Forms.Button();
+            this.dateValidUntil = new System.Windows.Forms.DateTimePicker();
+            this.chkTimeTrial = new System.Windows.Forms.CheckBox();
             this.grpbxLicenseType.SuspendLayout();
             this.grpbxUniqueID.SuspendLayout();
             this.grpbxLicenseInfo.SuspendLayout();
@@ -45,6 +47,8 @@
             // grpbxLicenseType
             // 
             resources.ApplyResources(this.grpbxLicenseType, "grpbxLicenseType");
+            this.grpbxLicenseType.Controls.Add(this.chkTimeTrial);
+            this.grpbxLicenseType.Controls.Add(this.dateValidUntil);
             this.grpbxLicenseType.Controls.Add(this.rdoVolumeLicense);
             this.grpbxLicenseType.Controls.Add(this.rdoSingleLicense);
             this.grpbxLicenseType.Name = "grpbxLicenseType";
@@ -98,6 +102,19 @@
             this.btnGenLicense.UseVisualStyleBackColor = true;
             this.btnGenLicense.Click += new System.EventHandler(this.btnGenLicense_Click);
             // 
+            // dateTimePicker1
+            // 
+            resources.ApplyResources(this.dateValidUntil, "dateValidUntil");
+            this.dateValidUntil.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateValidUntil.Name = "dateValidUntil";
+            this.dateValidUntil.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.chkTimeTrial, "chkTimeTrial");
+            this.chkTimeTrial.Name = "chkTimeTrial";
+            this.chkTimeTrial.UseVisualStyleBackColor = true;
+            // 
             // LicenseSettingsControl
             // 
             resources.ApplyResources(this, "$this");
@@ -126,7 +143,7 @@
         private System.Windows.Forms.GroupBox grpbxLicenseInfo;
         private System.Windows.Forms.PropertyGrid pgLicenseSettings;
         private System.Windows.Forms.Button btnGenLicense;
-
-
+        private System.Windows.Forms.DateTimePicker dateValidUntil;
+        private System.Windows.Forms.CheckBox chkTimeTrial;
     }
 }

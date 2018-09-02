@@ -49,9 +49,7 @@ namespace Licensing
             //Convert the signed XML into BASE64 string            
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(_licenseObject.OuterXml));
         }
-
-
-
+        
         public static LicenseEntity ParseLicenseFromBASE64String(Type licenseObjType, string licenseString, byte[] certPubKeyData, out LicenseStatus licStatus, out string validationMsg)
         {
             validationMsg = string.Empty;
@@ -59,7 +57,9 @@ namespace Licensing
 
             if (string.IsNullOrWhiteSpace(licenseString))
             {
+                validationMsg = "This product has been tampered with.";
                 licStatus = LicenseStatus.CRACKED;
+
                 return null;
             }
 
@@ -93,15 +93,31 @@ namespace Licensing
                         _lic = (LicenseEntity)_serializer.Deserialize(_reader);
                     }
 
-                    licStatus = _lic.DoExtraValidation(out validationMsg);
+                    licStatus = LicenseStatus.VALID;
+                    validationMsg = "This product is activated.";
+
+                    if (_lic.IsTimeTrial && DateTime.Now <= _lic.ValidUntil.AddDays(1))
+                    {
+                        validationMsg = $"Valid activation thru till {_lic.ValidUntil.ToString("MMMM dd, yyyy")}.";
+                    }
+
+                    licStatus = _lic.DoExtraValidation(validationMsg, out validationMsg);
+
+                    if (_lic.IsTimeTrial && DateTime.Now > _lic.ValidUntil.AddDays(1))
+                    {
+                        validationMsg = $"Product activation expired as of {_lic.ValidUntil.ToString("MMMM dd, yyyy")}";
+                        licStatus = LicenseStatus.TRIALEXPIRED;
+                    }
                 }
                 else
                 {
+                    validationMsg = "Invalid activation.";
                     licStatus = LicenseStatus.INVALID;
                 }
             }
             catch
             {
+                validationMsg = "This product has been tampered with.";
                 licStatus = LicenseStatus.CRACKED;
             }
 

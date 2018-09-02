@@ -121,14 +121,77 @@
   <data name="grpbxLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="btnPaste.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnPaste.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="btnPaste.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnPaste.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 271</value>
+  </data>
+  <data name="btnPaste.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnPaste.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnPaste.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="&gt;&gt;btnPaste.Name" xml:space="preserve">
+    <value>btnPaste</value>
+  </data>
+  <data name="&gt;&gt;btnPaste.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPaste.Parent" xml:space="preserve">
+    <value>grpbxLicense</value>
+  </data>
+  <data name="&gt;&gt;btnPaste.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Paste the received license data here</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>grpbxLicense</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="txtLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 20</value>
+    <value>6, 32</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtLicense.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -136,7 +199,7 @@
     <value>Vertical</value>
   </data>
   <data name="txtLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>381, 243</value>
+    <value>386, 233</value>
   </data>
   <data name="txtLicense.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -151,13 +214,13 @@
     <value>grpbxLicense</value>
   </data>
   <data name="&gt;&gt;txtLicense.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="grpbxLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 99</value>
+    <value>3, 70</value>
   </data>
   <data name="grpbxLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 269</value>
+    <value>398, 298</value>
   </data>
   <data name="grpbxLicense.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -180,20 +243,50 @@
   <data name="grpbxUID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="btnCopy.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="btnCopy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 32</value>
+  </data>
+  <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 21</value>
+  </data>
+  <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Name" xml:space="preserve">
+    <value>btnCopy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Parent" xml:space="preserve">
+    <value>grpbxUID</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblUIDTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblUIDTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
+    <value>3, 16</value>
   </data>
   <data name="lblUIDTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 13</value>
+    <value>257, 13</value>
   </data>
   <data name="lblUIDTip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="lblUIDTip.Text" xml:space="preserve">
-    <value>Provide the below UID when purchasing the license</value>
+    <value>Provide this machine ID when purchasing the license</value>
   </data>
   <data name="&gt;&gt;lblUIDTip.Name" xml:space="preserve">
     <value>lblUIDTip</value>
@@ -205,36 +298,6 @@
     <value>grpbxUID</value>
   </data>
   <data name="&gt;&gt;lblUIDTip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lnkCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="lnkCopy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 64</value>
-  </data>
-  <data name="lnkCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
-  </data>
-  <data name="lnkCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lnkCopy.Text" xml:space="preserve">
-    <value>Copy to Clipboard</value>
-  </data>
-  <data name="&gt;&gt;lnkCopy.Name" xml:space="preserve">
-    <value>lnkCopy</value>
-  </data>
-  <data name="&gt;&gt;lnkCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkCopy.Parent" xml:space="preserve">
-    <value>grpbxUID</value>
-  </data>
-  <data name="&gt;&gt;lnkCopy.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="txtUID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -244,10 +307,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="txtUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 41</value>
+    <value>6, 32</value>
   </data>
   <data name="txtUID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>381, 20</value>
+    <value>332, 20</value>
   </data>
   <data name="txtUID.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -271,13 +334,13 @@
     <value>3, 3</value>
   </data>
   <data name="grpbxUID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 90</value>
+    <value>398, 61</value>
   </data>
   <data name="grpbxUID.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="grpbxUID.Text" xml:space="preserve">
-    <value>License UID</value>
+    <value>Machine ID</value>
   </data>
   <data name="&gt;&gt;grpbxUID.Name" xml:space="preserve">
     <value>grpbxUID</value>

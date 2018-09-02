@@ -45,22 +45,31 @@ namespace Licensing.GUI
             var _licStatus= LicenseStatus.UNDEFINED;
             var _msg = string.Empty;
             var _lic = LicenseHandler.ParseLicenseFromBASE64String(LicenseObjectType, txtLicense.Text.Trim(), CertificatePublicKeyData, out _licStatus, out _msg);
+
             switch (_licStatus)
             {
                 case LicenseStatus.VALID:                   
                     if (ShowMessageAfterValidation)
                     {
-                        MessageBox.Show(_msg, "License is valid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(_msg, "Valid license", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     return true;
+
+                case LicenseStatus.TRIALEXPIRED:
+                    if (ShowMessageAfterValidation)
+                    {
+                        MessageBox.Show(_msg, $"Activation expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    return false;
                     
                 case LicenseStatus.CRACKED:
                 case LicenseStatus.INVALID:
                 case LicenseStatus.UNDEFINED:
                     if (ShowMessageAfterValidation)
                     {
-                        MessageBox.Show(_msg, "License is INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(_msg, "Invalid license", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     return false;
@@ -70,10 +79,14 @@ namespace Licensing.GUI
             }
         }
 
-
-        private void lnkCopy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtUID.Text);
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            txtLicense.Text = Clipboard.GetText();
         }
     }
 }

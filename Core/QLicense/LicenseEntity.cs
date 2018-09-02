@@ -72,8 +72,7 @@ namespace Licensing
             }
         }
     }
-
-
+    
     public abstract class LicenseEntity
     {
         [Browsable(false)]
@@ -85,6 +84,16 @@ namespace Licensing
         [XmlElement("UID")]
         [ShowInLicenseInfo(false)]
         public string UID { get; set; }
+
+        [Browsable(false)]
+        [XmlElement("IsTimeTrial")]
+        [ShowInLicenseInfo(false)]
+        public bool IsTimeTrial { get; set; }
+
+        [Browsable(false)]
+        [XmlElement("ValidUntil")]
+        [ShowInLicenseInfo(false)]
+        public DateTime ValidUntil { get; set; }
 
         [Browsable(false)]
         [XmlElement("Type")]
@@ -101,7 +110,7 @@ namespace Licensing
         /// </summary>
         /// <param name="validationMsg"></param>
         /// <returns></returns>
-        public abstract LicenseStatus DoExtraValidation(out string validationMsg);
+        public abstract LicenseStatus DoExtraValidation(string origValidationMsg, out string validationMsg);
 
     }
 }

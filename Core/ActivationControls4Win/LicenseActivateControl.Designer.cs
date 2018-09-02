@@ -33,8 +33,10 @@
             this.txtLicense = new System.Windows.Forms.TextBox();
             this.grpbxUID = new System.Windows.Forms.GroupBox();
             this.lblUIDTip = new System.Windows.Forms.Label();
-            this.lnkCopy = new System.Windows.Forms.LinkLabel();
             this.txtUID = new System.Windows.Forms.TextBox();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPaste = new System.Windows.Forms.Button();
             this.grpbxLicense.SuspendLayout();
             this.grpbxUID.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +44,8 @@
             // grpbxLicense
             // 
             resources.ApplyResources(this.grpbxLicense, "grpbxLicense");
+            this.grpbxLicense.Controls.Add(this.btnPaste);
+            this.grpbxLicense.Controls.Add(this.label1);
             this.grpbxLicense.Controls.Add(this.txtLicense);
             this.grpbxLicense.Name = "grpbxLicense";
             this.grpbxLicense.TabStop = false;
@@ -54,8 +58,8 @@
             // grpbxUID
             // 
             resources.ApplyResources(this.grpbxUID, "grpbxUID");
+            this.grpbxUID.Controls.Add(this.btnCopy);
             this.grpbxUID.Controls.Add(this.lblUIDTip);
-            this.grpbxUID.Controls.Add(this.lnkCopy);
             this.grpbxUID.Controls.Add(this.txtUID);
             this.grpbxUID.Name = "grpbxUID";
             this.grpbxUID.TabStop = false;
@@ -65,20 +69,30 @@
             resources.ApplyResources(this.lblUIDTip, "lblUIDTip");
             this.lblUIDTip.Name = "lblUIDTip";
             // 
-            // lnkCopy
-            // 
-            resources.ApplyResources(this.lnkCopy, "lnkCopy");
-            this.lnkCopy.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkCopy.Name = "lnkCopy";
-            this.lnkCopy.TabStop = true;
-            this.lnkCopy.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.lnkCopy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkCopy_LinkClicked);
-            // 
             // txtUID
             // 
             resources.ApplyResources(this.txtUID, "txtUID");
             this.txtUID.Name = "txtUID";
             this.txtUID.ReadOnly = true;
+            // 
+            // btnCopy
+            // 
+            resources.ApplyResources(this.btnCopy, "btnCopy");
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // btnPaste
+            // 
+            resources.ApplyResources(this.btnPaste, "btnPaste");
+            this.btnPaste.Name = "btnPaste";
+            this.btnPaste.UseVisualStyleBackColor = true;
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
             // 
             // LicenseActivateControl
             // 
@@ -101,7 +115,9 @@
         private System.Windows.Forms.TextBox txtLicense;
         private System.Windows.Forms.GroupBox grpbxUID;
         private System.Windows.Forms.Label lblUIDTip;
-        private System.Windows.Forms.LinkLabel lnkCopy;
         private System.Windows.Forms.TextBox txtUID;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnPaste;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -41,33 +41,28 @@ namespace DemoLicense
         public MyLicense()
         {
             //Initialize app name for the license
-            this.AppName = "DemoWinFormApp";
+            AppName = "DemoWinFormApp";
             EnableFeature03 = new List<string>();
             EnableFeature04 = new List<int>();
         }
 
-        public override LicenseStatus DoExtraValidation(out string validationMsg)
+        public override LicenseStatus DoExtraValidation(string origValidationMsg, out string validationMsg)
         {
-            var _licStatus = LicenseStatus.UNDEFINED;
-            validationMsg = string.Empty;
+            var _licStatus = LicenseStatus.VALID;
+            validationMsg = origValidationMsg;
 
-            switch (this.Type)
+            switch (Type)
             {
                 case LicenseTypes.Single:
                     //For Single License, check whether UID is matched
-                    if (this.UID == LicenseHandler.GenerateUID(this.AppName))
-                    {
-                        _licStatus = LicenseStatus.VALID;
-                    }
-                    else
-                    {
+                    if (UID != LicenseHandler.GenerateUID(AppName)) {
                         validationMsg = "The license is NOT for this copy!";
                         _licStatus = LicenseStatus.INVALID;                    
                     }
                     break;
                 case LicenseTypes.Volume:
                     //No UID checking for Volume License
-                    _licStatus = LicenseStatus.VALID;
+                    validationMsg = "Volume license";
                     break;
                 default:
                     validationMsg = "Invalid license";

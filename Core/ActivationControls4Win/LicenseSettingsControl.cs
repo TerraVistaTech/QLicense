@@ -62,6 +62,10 @@ namespace Licensing.GUI
         {
             if (_lic == null) throw new ArgumentException("LicenseEntity is invalid");
 
+            _lic.IsTimeTrial = false;
+            _lic.ValidUntil = DateTime.MaxValue;
+            _lic.CreateDateTime = DateTime.Now;
+
             if (rdoSingleLicense.Checked)
             {
                 if (LicenseHandler.ValidateUIDFormat(txtUID.Text.Trim()))
@@ -71,7 +75,7 @@ namespace Licensing.GUI
                 }
                 else
                 {
-                    MessageBox.Show("License UID is blank or invalid", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("License UID is blank or invalid", "Could not generate license", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -81,8 +85,12 @@ namespace Licensing.GUI
                 _lic.UID = string.Empty;
             }
 
-            _lic.CreateDateTime = DateTime.Now;
-
+            if (chkTimeTrial.Checked)
+            {
+                _lic.IsTimeTrial = true;
+                _lic.ValidUntil = dateValidUntil.Value;
+            }
+            
             if (OnLicenseSettingsValidating != null)
             {
                 var _args = new LicenseSettingsValidatingEventArgs() { License = _lic, CancelGenerating = false };
