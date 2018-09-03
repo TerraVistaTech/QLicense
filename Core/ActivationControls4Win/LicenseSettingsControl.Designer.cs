@@ -30,15 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LicenseSettingsControl));
             this.grpbxLicenseType = new System.Windows.Forms.GroupBox();
+            this.chkTimeTrial = new System.Windows.Forms.CheckBox();
+            this.dateValidUntil = new System.Windows.Forms.DateTimePicker();
             this.rdoVolumeLicense = new System.Windows.Forms.RadioButton();
             this.rdoSingleLicense = new System.Windows.Forms.RadioButton();
             this.grpbxUniqueID = new System.Windows.Forms.GroupBox();
             this.txtUID = new System.Windows.Forms.TextBox();
             this.grpbxLicenseInfo = new System.Windows.Forms.GroupBox();
             this.pgLicenseSettings = new System.Windows.Forms.PropertyGrid();
-            this.btnGenLicense = new System.Windows.Forms.Button();
-            this.dateValidUntil = new System.Windows.Forms.DateTimePicker();
-            this.chkTimeTrial = new System.Windows.Forms.CheckBox();
             this.grpbxLicenseType.SuspendLayout();
             this.grpbxUniqueID.SuspendLayout();
             this.grpbxLicenseInfo.SuspendLayout();
@@ -53,6 +52,18 @@
             this.grpbxLicenseType.Controls.Add(this.rdoSingleLicense);
             this.grpbxLicenseType.Name = "grpbxLicenseType";
             this.grpbxLicenseType.TabStop = false;
+            // 
+            // chkTimeTrial
+            // 
+            resources.ApplyResources(this.chkTimeTrial, "chkTimeTrial");
+            this.chkTimeTrial.Name = "chkTimeTrial";
+            this.chkTimeTrial.UseVisualStyleBackColor = true;
+            // 
+            // dateValidUntil
+            // 
+            resources.ApplyResources(this.dateValidUntil, "dateValidUntil");
+            this.dateValidUntil.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateValidUntil.Name = "dateValidUntil";
             // 
             // rdoVolumeLicense
             // 
@@ -95,26 +106,6 @@
             this.pgLicenseSettings.Name = "pgLicenseSettings";
             this.pgLicenseSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             // 
-            // btnGenLicense
-            // 
-            resources.ApplyResources(this.btnGenLicense, "btnGenLicense");
-            this.btnGenLicense.Name = "btnGenLicense";
-            this.btnGenLicense.UseVisualStyleBackColor = true;
-            this.btnGenLicense.Click += new System.EventHandler(this.btnGenLicense_Click);
-            // 
-            // dateTimePicker1
-            // 
-            resources.ApplyResources(this.dateValidUntil, "dateValidUntil");
-            this.dateValidUntil.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateValidUntil.Name = "dateValidUntil";
-            this.dateValidUntil.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // checkBox1
-            // 
-            resources.ApplyResources(this.chkTimeTrial, "chkTimeTrial");
-            this.chkTimeTrial.Name = "chkTimeTrial";
-            this.chkTimeTrial.UseVisualStyleBackColor = true;
-            // 
             // LicenseSettingsControl
             // 
             resources.ApplyResources(this, "$this");
@@ -122,7 +113,6 @@
             this.Controls.Add(this.grpbxLicenseType);
             this.Controls.Add(this.grpbxUniqueID);
             this.Controls.Add(this.grpbxLicenseInfo);
-            this.Controls.Add(this.btnGenLicense);
             this.Name = "LicenseSettingsControl";
             this.grpbxLicenseType.ResumeLayout(false);
             this.grpbxLicenseType.PerformLayout();
@@ -142,7 +132,6 @@
         private System.Windows.Forms.TextBox txtUID;
         private System.Windows.Forms.GroupBox grpbxLicenseInfo;
         private System.Windows.Forms.PropertyGrid pgLicenseSettings;
-        private System.Windows.Forms.Button btnGenLicense;
         private System.Windows.Forms.DateTimePicker dateValidUntil;
         private System.Windows.Forms.CheckBox chkTimeTrial;
     }

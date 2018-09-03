@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Security;
 using System.Windows.Forms;
 
@@ -58,7 +59,7 @@ namespace Licensing.GUI
             txtUID.Enabled = rdoSingleLicense.Checked;
         }
 
-        private void btnGenLicense_Click(object sender, EventArgs e)
+        public void Generate()
         {
             if (_lic == null) throw new ArgumentException("LicenseEntity is invalid");
 
@@ -108,6 +109,39 @@ namespace Licensing.GUI
                 var _licStr = LicenseHandler.GenerateLicenseBASE64String(_lic, CertificatePrivateKeyData, CertificatePassword);
 
                 OnLicenseGenerated(this, new LicenseGeneratedEventArgs() { LicenseBASE64String = _licStr });
+            }
+        }
+
+        public void ShowLicense(LicenseEntity _lic)
+        {
+            if (_lic != null)
+            {
+                License = _lic;
+                rdoSingleLicense.Checked = rdoVolumeLicense.Checked = chkTimeTrial.Checked = false;
+                dateValidUntil.Value = DateTime.Today;
+
+                switch (_lic.Type)
+                {
+                    case LicenseTypes.Single:
+                        rdoSingleLicense.Checked = true;
+                        break;
+                    case LicenseTypes.Volume:
+                        rdoVolumeLicense.Checked = true;
+                        break;
+                    case LicenseTypes.Unknown:
+                    default:
+                        break;
+                }
+
+                if (_lic.IsTimeTrial)
+                {
+                    chkTimeTrial.Checked = true;
+                    dateValidUntil.Value = _lic.ValidUntil;
+                }
+
+                txtUID.Text = _lic.UID;
+
+                pgLicenseSettings.Refresh();
             }
         }
     }

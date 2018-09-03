@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using System.Security;
 using DemoActivationTool.Properties;
@@ -53,5 +54,29 @@ namespace DemoActivationTool
                 _certPwd);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            var result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK && File.Exists(dialog.FileName))
+            {
+                var _certPubicKeyData = DemoLicense.Properties.Resource.Licensing;
+
+                var _lic = LicenseHandler.ParseLicenseFromBASE64String(
+                    typeof(MyLicense),
+                    File.ReadAllText(dialog.FileName),
+                    _certPubicKeyData,
+                    out var _status,
+                    out var _msg);
+
+                licSettings.ShowLicense(_lic);
+            }
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            licSettings.Generate();
+        }
     }
 }
