@@ -41,7 +41,7 @@ namespace Licensing
             //Get RSA key from certificate
             var cert = new X509Certificate2(certPrivateKeyData, certFilePwd);
 
-            var rsaKey = (RSACryptoServiceProvider)cert.PrivateKey;
+            var rsaKey = (RSA)cert.PrivateKey;
 
             //Sign the XML
             SignXML(_licenseObject, rsaKey);
@@ -70,7 +70,7 @@ namespace Licensing
             {
                 //Get RSA key from certificate
                 var cert = new X509Certificate2(certPubKeyData);
-                var rsaKey = (RSACryptoServiceProvider)cert.PublicKey.Key;
+                var rsaKey = (RSA)cert.PublicKey.Key;
 
                 var xmlDoc = new XmlDocument();
 
@@ -115,7 +115,7 @@ namespace Licensing
                     licStatus = LicenseStatus.INVALID;
                 }
             }
-            catch
+            catch (Exception e)
             {
                 validationMsg = "This product has been tampered with.";
                 licStatus = LicenseStatus.CRACKED;
