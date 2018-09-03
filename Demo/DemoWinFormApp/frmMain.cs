@@ -22,10 +22,10 @@ namespace DemoWinFormApp
             //Initialize variables with default values
             MyLicense _lic = null;
             var _msg = string.Empty;
-            var _status = LicenseStatus.UNDEFINED;
+            LicenseStatus _status;
 
             //Read public key from resources
-            _certPubicKeyData = Resources.Licensing;
+            _certPubicKeyData = DemoLicense.Properties.Resource.Licensing;
 
             //Check if the XML license file exists
             if (File.Exists("license.lic"))

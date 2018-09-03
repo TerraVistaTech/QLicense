@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Xml.Serialization;
 using Licensing;
@@ -26,11 +24,8 @@ namespace DemoLicense
         [Category("License Options")]
         [XmlElement("EnableFeature03")]
         [ShowInLicenseInfo(true, "Enable Feature 03", ShowInLicenseInfoAttribute.FormatType.List)]
-        [Editor(@"System.Windows.Forms.Design.StringCollectionEditor," +
-                "System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
-            typeof(System.Drawing.Design.UITypeEditor))]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public List<string> EnableFeature03 { get; set; }
+        public List<int> EnableFeature03 { get; set; }
 
         [DisplayName("Enable Feature 04")]
         [Category("License Options")]
@@ -42,7 +37,7 @@ namespace DemoLicense
         {
             //Initialize app name for the license
             AppName = "DemoWinFormApp";
-            EnableFeature03 = new List<string>();
+            EnableFeature03 = new List<int>();
             EnableFeature04 = new List<int>();
         }
 

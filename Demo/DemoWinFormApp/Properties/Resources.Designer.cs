@@ -59,15 +59,5 @@ namespace DemoWinFormApp.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Licensing {
-            get {
-                object obj = ResourceManager.GetObject("Licensing", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
