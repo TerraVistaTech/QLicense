@@ -67,8 +67,7 @@ namespace DemoActivationTool
                     typeof(MyLicense),
                     File.ReadAllText(dialog.FileName),
                     _certPubicKeyData,
-                    out var _status,
-                    out var _msg);
+                    out var _status);
 
                 licSettings.ShowLicense(_lic);
             }

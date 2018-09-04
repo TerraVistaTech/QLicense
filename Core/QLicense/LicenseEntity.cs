@@ -110,7 +110,7 @@ namespace Licensing
         /// </summary>
         /// <param name="validationMsg"></param>
         /// <returns></returns>
-        public abstract LicenseStatus DoExtraValidation(string origValidationMsg, out string validationMsg);
+        public abstract LicenseStatus DoExtraValidation();
 
     }
 }

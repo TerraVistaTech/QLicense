@@ -34,8 +34,7 @@ namespace DemoWinFormApp
                     typeof(MyLicense),
                     File.ReadAllText("license.lic"),
                     _certPubicKeyData,
-                    out _status,
-                    out _msg);
+                    out _status);
             }
             else
             {

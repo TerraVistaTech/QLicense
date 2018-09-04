@@ -41,26 +41,22 @@ namespace DemoLicense
             EnableFeature04 = new List<int>();
         }
 
-        public override LicenseStatus DoExtraValidation(string origValidationMsg, out string validationMsg)
+        public override LicenseStatus DoExtraValidation()
         {
             var _licStatus = LicenseStatus.VALID;
-            validationMsg = origValidationMsg;
 
             switch (Type)
             {
                 case LicenseTypes.Single:
                     //For Single License, check whether UID is matched
                     if (UID != LicenseHandler.GenerateUID(AppName)) {
-                        validationMsg = "The license is NOT for this copy!";
                         _licStatus = LicenseStatus.INVALID;                    
                     }
                     break;
                 case LicenseTypes.Volume:
                     //No UID checking for Volume License
-                    validationMsg = "Volume license";
                     break;
                 default:
-                    validationMsg = "Invalid license";
                     _licStatus= LicenseStatus.INVALID;
                     break;
             }
